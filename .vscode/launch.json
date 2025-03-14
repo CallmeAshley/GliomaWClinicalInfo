@@ -1,0 +1,55 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {"CUDA_VISIBLE_DEVICES":"0"},
+            "args" : [
+                // "gpus=3",
+                // "trainer.end_epoch=1",
+                // "cls_mode=idh",
+                // "loss=bce",
+                // "model.net.num_classes=1",
+                // "metric=binary",
+
+                // "gpus=3",
+                // "cls_mode=subtype",
+                // "loss=ce",
+                // "model.net.num_classes=3",
+                // "metric=multiclass"
+
+                "cls_mode=1p_19q",
+                // "model.net.num_classes=1",
+                "metric=binary",
+                "data.slice_percentile=75",
+                // "ckpt=/mai_nas/BYS/glioma/exp/train/runs/2023-11-14_14-35-45/checkpoint_best_auc.pth"
+
+                "metric=binary",
+                "model=clinical_swint_small",
+                // "model=vit_base_clinical_prompt",
+                // "cls_mode=idh",
+                "model.num_classes=1",
+                // "paths=internal_eval",
+                // "paths.time_dir=20231229/141310",
+                // "data.slice_percentile=75",
+                "model.clini_info_style=bert",
+                "model.embed_trainable=False",
+                "model.decoder_depth=2",
+                "model.clini_embed_token=word",
+                "model.age_cutoff=45",
+                "model.info_mode=age"
+                // "ckpt=/mai_nas/LSH/glioma_with_clinical/exp/runs/idh/20240103/192124/train/checkpoint_best_loss.pth"
+
+
+                ]
+        }
+    ]
+}
